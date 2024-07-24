@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('registroForm');
     const tableBody = document.querySelector('#registroTabla tbody');
 
-    // Función para cargar registros desde la base de datos
+    // Función para cargar registros desde el archivo JSON
     function loadRegistros() {
-        fetch('/api/registros')
+        fetch('entries.json')
             .then(response => response.json())
             .then(data => {
                 tableBody.innerHTML = '';
@@ -16,32 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     newRow.insertCell(3).textContent = row.conducta;
                     newRow.insertCell(4).textContent = row.aprendizaje;
                 });
+            })
+            .catch(error => {
+                console.error('Error al cargar los registros:', error);
             });
     }
 
     // Cargar registros al inicio
     loadRegistros();
-
-    // Manejar el envío del formulario
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        fetch('/api/registros', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.id) {
-                loadRegistros();
-                form.reset();
-            }
-        });
-    });
 });
