@@ -26,5 +26,12 @@
     "emociones": "Emociones de ejemplo",
     "conducta": "Conducta de ejemplo",
     "aprendizaje": "Aprendizaje de ejemplo"
+  },
+  {
+    "situacion": "aa",
+    "pensamientos": "aaa",
+    "emociones": "aaaa",
+    "conducta": "aaa",
+    "aprendizaje": "aa"
   }
 ]

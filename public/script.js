@@ -23,4 +23,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cargar registros al inicio
     loadRegistros();
+
+    // Función para copiar al portapapeles
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    }
+
+    // Manejar el clic del botón de copiar
+    document.getElementById('copyButton').addEventListener('click', function() {
+        const situacion = document.getElementById('situacion').value;
+        const pensamientos = document.getElementById('pensamientos').value;
+        const emociones = document.getElementById('emociones').value;
+        const conducta = document.getElementById('conducta').value;
+        const aprendizaje = document.getElementById('aprendizaje').value;
+
+        const command = `node -e 'require("./addEntry")("${situacion}", "${pensamientos}", "${emociones}", "${conducta}", "${aprendizaje}")'`;
+        copyToClipboard(command);
+        alert('Comando copiado al portapapeles');
+    });
 });
