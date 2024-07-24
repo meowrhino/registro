@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Diario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Registro de Pensamiento, Emoción, Conducta y Aprendizaje</h1>
+    <form id="registroForm">
+        <label for="situacion">Situación y Fecha:</label><br>
+        <input type="text" id="situacion" name="situacion" required><br><br>
+        
+        <label for="pensamientos">Pensamientos Asociados:</label><br>
+        <input type="text" id="pensamientos" name="pensamientos" required><br><br>
+        
+        <label for="emociones">Emociones y Sensaciones Corporales:</label><br>
+        <input type="text" id="emociones" name="emociones" required><br><br>
+        
+        <label for="conducta">Conducta Realizada:</label><br>
+        <input type="text" id="conducta" name="conducta" required><br><br>
+        
+        <label for="aprendizaje">Aprendizaje o Reflexión:</label><br>
+        <input type="text" id="aprendizaje" name="aprendizaje" required><br><br>
+        
+        <button type="submit">Agregar Entrada</button>
+    </form>
+
+    <table id="registroTabla">
+        <thead>
+            <tr>
+                <th>Situación y Fecha</th>
+                <th>Pensamientos Asociados</th>
+                <th>Emociones y Sensaciones Corporales</th>
+                <th>Conducta Realizada</th>
+                <th>Aprendizaje o Reflexión</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán las nuevas entradas -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
