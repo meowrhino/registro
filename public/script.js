@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const tableBody = document.querySelector('#registroTabla tbody');
 
